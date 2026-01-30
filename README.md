@@ -1,6 +1,6 @@
-# A Windows 11 On Github Codespaces
+# A Windows 10 On Github Codespaces
 
-This project runs a Windows 11 VM (Tiny10) in QEMU with UEFI, TPM 2.0 support, and VirtIO drivers.
+This project runs a Windows 10 VM (Tiny10) in QEMU with UEFI, TPM 2.0 support, and VirtIO drivers.
 
 ## Prerequisites
 
