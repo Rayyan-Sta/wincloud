@@ -10,7 +10,7 @@ set -euo pipefail
 # Example:
 #   ./run_win11_qemu.sh --name win11-22h2 --mem 8G --disk-size 64G
 
-ISO_URL_DEFAULT="https://archive.org/download/windows11_20220930/Win11_22H2_English_x64v1.iso"
+ISO_URL_DEFAULT="https://github.com/Rayyan-Sta/wincloud/releases/download/v1.0.0/Tiny10BakedVirtio.iso"
 VIRTIO_URL_DEFAULT="https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/stable-virtio/virtio-win.iso"
 USE_VIRTIO=1
 VIRTIO_FIRST=0
