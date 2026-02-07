@@ -9,6 +9,7 @@ Install required dependencies:
 ```bash
 sudo apt update
 sudo apt install -y qemu-system-x86 qemu-utils ovmf swtpm
+wget https://github.com/Rayyan-Sta/wincloud.git
 ```
 
 ## Running the VM
