@@ -1,6 +1,6 @@
-# A Windows 10 On Github Codespaces
+# A Windows 11 On Github Codespaces
 
-This project runs a Windows 10 VM (Tiny10) in QEMU with UEFI, TPM 2.0 support, and VirtIO drivers.
+This project runs a Windows 11 VM (Micro11) in QEMU with UEFI, TPM 2.0 support, and VirtIO drivers.
 
 ## Prerequisites
 
@@ -22,16 +22,10 @@ chmod +x run_win11_qemu.sh
 
 ### Step 2: Boot the VM
 
-Basic command (downloads ISOs on first run):
+Basic command (Use Pre-built ISOs on first run):
 
 ```bash
-./run_win11_qemu.sh --name tiny10 --mem 8G --disk-size 12G
-```
-
-Or, use a local ISO with VirtIO drivers pre-baked:
-
-```bash
-./run_win11_qemu.sh --name tiny10 --mem 8G --disk-size 12G --iso-local "./iso/Tiny10(VirtioBaked).iso"
+./run_win11_qemu.sh --name tiny10 --mem 8G --disk-size 12G --iso-local ./iso/Micro11.iso
 ```
 
 **Options:**
@@ -64,7 +58,7 @@ Use Remmina, TigerVNC, or any VNC client to connect to `127.0.0.1:5901`.
 
 ### Step 4: Complete Windows Setup
 
-- Boot from the Tiny10 ISO
+- Boot from the Micro11 ISO
 - Follow the Windows setup wizard
 - Once installed, you can connect via RDP to `localhost:3389` (if using standard Windows)
 
@@ -87,7 +81,6 @@ The swtpm process (TPM emulator) will be stopped automatically.
 
 ## Notes
 
-- First boot downloads ~1.7GB of ISOs (Tiny10 and VirtIO drivers)
 - KVM acceleration requires `/dev/kvm` access; falls back to TCG if unavailable
 - TPM 2.0 is enabled by default for Windows 11 compatibility
 - RDP forwarding is enabled on host port 3389 for remote desktop access 
