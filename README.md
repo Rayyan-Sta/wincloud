@@ -39,7 +39,7 @@ Basic command (Use Pre-built ISOs on first run):
 - `--gui`: Enable graphical display (requires `DISPLAY` set)
 - `--help`: Show all available options
 
-### Step 3: Access the VM via VNC
+### Step 3: Access the VM via VNC Or SPICE
 
 The VM runs headless by default with VNC on `127.0.0.1:5901`.
 
@@ -57,6 +57,12 @@ The VM runs headless by default with VNC on `127.0.0.1:5901`.
 **Option B: Use a VNC client**
 
 Use Remmina, TigerVNC, or any VNC client to connect to `127.0.0.1:5901`.
+
+**Option C: Use SPICE**
+
+Download virt-viewer from this link https://gitlab.com/virt-viewer/virt-viewer/-/releases/v11.0/downloads/virt-viewer-x64-11.0-1.0.msi
+
+Then open and connect on 'spice://127.0.0.1:5900'
 
 ### Step 4: Complete Windows Setup
 
