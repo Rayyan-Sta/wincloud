@@ -10,6 +10,8 @@ Install required dependencies:
 sudo apt update
 sudo apt install -y qemu-system-x86 qemu-utils ovmf swtpm
 wget https://github.com/Rayyan-Sta/wincloud.git
+cd wincloud && mkdir iso
+wget https://github.com/Rayyan-Sta/wincloud/releases/download/v2.0/Micro11.iso
 ```
 
 ## Running the VM
