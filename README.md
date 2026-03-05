@@ -62,7 +62,7 @@ Use Remmina, TigerVNC, or any VNC client to connect to `127.0.0.1:5901`.
 
 Download virt-viewer from this link https://gitlab.com/virt-viewer/virt-viewer/-/releases/v11.0/downloads/virt-viewer-x64-11.0-1.0.msi
 
-Then open and connect on 'spice://127.0.0.1:5900'
+Then open and connect on 'spice://127.0.0.1:5902'
 
 ### Step 4: Complete Windows Setup
 
