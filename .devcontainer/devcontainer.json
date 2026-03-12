@@ -1,1 +1,8 @@
-
+{
+  "name": "QEMU KVM Environment",
+  "image": "://mcr.microsoft.com",
+  "runArgs": [
+    "--device=/dev/kvm"
+  ],
+  "postCreateCommand": "sudo chmod 666 /dev/kvm && sudo apt-get update && sudo apt-get install -y qemu-system-x86 cpu-checker"
+}
