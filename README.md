@@ -13,7 +13,12 @@ wget https://github.com/Rayyan-Sta/wincloud.git
 cd wincloud && mkdir iso
 wget https://github.com/Rayyan-Sta/wincloud/releases/download/v2.0/Micro11.iso
 ```
+Optional
+```bash
+mv workspaces/your_repository/wincloud/.devcontainer workspaces/your_repository
+```
 
+Then Rebuild The Container On Gear icon -> Command Palette Then Type Rebuild Container And Pick Rebuild
 ## Running the VM
 
 ### Step 1: Make the script executable
