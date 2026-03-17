@@ -4,5 +4,5 @@
   "runArgs": [
     "--device=/dev/kvm"
   ],
-  "postCreateCommand": "sudo chmod 666 /dev/kvm && sudo apt-get update && sudo apt-get install -y qemu-system-x86 cpu-checker"
+  "postCreateCommand": "sudo chmod 666 /dev/kvm && sudo apt update && sudo apt install -y qemu-system-x86 qemu-kvm qemu-utils swtpm ovmf"
 }
