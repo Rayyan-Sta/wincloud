@@ -8,13 +8,14 @@ Install required dependencies:
 
 ```bash
 sudo apt update
-sudo apt install -y qemu-system-x86 qemu-utils ovmf swtpm
+sudo apt install -y qemu-system-x86 qemu-utils ovmf swtpm 
 wget https://github.com/Rayyan-Sta/wincloud.git
 cd wincloud && mkdir iso
 wget https://github.com/Rayyan-Sta/wincloud/releases/download/v2.0/Micro11.iso
 ```
 Optional
 ```bash
+sudo apt install qemu-kvm
 mv workspaces/your_repository/wincloud/.devcontainer workspaces/your_repository
 ```
 
@@ -32,7 +33,12 @@ chmod +x run_win11_qemu.sh
 Basic command (Use Pre-built ISOs on first run):
 
 ```bash
-./run_win11_qemu.sh --name tiny10 --mem 8G --disk-size 12G --iso-local ./iso/Micro11.iso
+./run_win11_qemu.sh --name tiny10 --cpus 2 --mem 8G --disk-size 12G --iso-local ./iso/Micro11.iso
+```
+Advanced command (Use Pre-Built ISOs and KVM on first run)
+
+```bash
+./run_win11_qemu.sh --name tiny10 --cpus 2 --mem 8G --disk-size 12G --kvm --iso-local ./iso/Micro11.iso
 ```
 
 **Options:**
