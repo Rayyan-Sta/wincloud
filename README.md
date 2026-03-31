@@ -40,7 +40,7 @@ Basic command (Use Pre-built ISOs on first run):
 - `--mem`: RAM allocation (e.g., `8G`, `4G`)
 - `--disk-size`: VM disk size (e.g., `64G`, `32G`)
 - `--iso-local`: Path to local ISO file
-- `--no-kvm`: Disable KVM acceleration (falls back to TCG emulation)
+- `--kvm`: Enable KVM acceleration
 - `--gui`: Enable graphical display (requires `DISPLAY` set)
 - `--help`: Show all available options
 
