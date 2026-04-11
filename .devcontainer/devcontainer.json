@@ -1,8 +1,0 @@
-{
-  "name": "QEMU KVM Environment",
-  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-22.04",
-  "runArgs": [
-    "--device=/dev/kvm"
-  ],
-  "postCreateCommand": "sudo chmod 666 /dev/kvm && sudo apt update && sudo apt install -y qemu-system-x86 qemu-kvm qemu-utils swtpm ovmf"
-}
