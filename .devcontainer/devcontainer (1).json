@@ -1,0 +1,15 @@
+{
+  "name": "QEMU KVM + Pi-hole Environment",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-22.04",
+  "runArgs": [
+    "--device=/dev/kvm",
+    "--cap-add=NET_ADMIN",
+    "--cap-add=NET_RAW"
+  ],
+  "forwardPorts": [53, 80],
+  "portsAttributes": {
+    "53": { "label": "Pi-hole DNS",    "onAutoForward": "silent" },
+    "80": { "label": "Pi-hole Web UI", "onAutoForward": "notify" }
+  },
+  "postCreateCommand": "sudo chmod 666 /dev/kvm && sudo apt update && sudo apt install -y qemu-system-x86 qemu-kvm qemu-utils swtpm ovmf && bash .devcontainer/setup-pihole.sh"
+}
