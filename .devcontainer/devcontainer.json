@@ -11,5 +11,5 @@
     "53": { "label": "Pi-hole DNS",    "onAutoForward": "silent" },
     "80": { "label": "Pi-hole Web UI", "onAutoForward": "notify" }
   },
-  "postCreateCommand": "sudo chmod 666 /dev/kvm && sudo apt update && sudo apt install -y qemu-system-x86 qemu-kvm qemu-utils swtpm ovmf && bash .devcontainer/setup-pihole.sh"
+  "postCreateCommand": "sudo chmod 666 /dev/kvm && sudo apt update && sudo apt install -y docker-compose-plugin qemu-system-x86 qemu-kvm qemu-utils swtpm ovmf && bash .devcontainer/setup-pihole.sh"
 }
