@@ -1,15 +1,36 @@
 {
-  "name": "QEMU KVM + Pi-hole Environment",
+  "name": "WinCloud — QEMU + Pi-hole",
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu-22.04",
+
+  // ── Container runtime args ────────────────────────────────────────────────
+  // --device=/dev/net/tun  → Tailscale & QEMU TAP/TUN networking
+  // --device=/dev/kvm      → KVM hardware acceleration for QEMU
+  // NET_ADMIN + NET_RAW    → iptables, tun/tap creation, Tailscale MagicDNS
+  // SYS_ADMIN              → mount namespaces, swtpm TPM emulation
+  // MKNOD                  → create /dev/tpm* nodes for swtpm
   "runArgs": [
+    "--device=/dev/net/tun",
     "--device=/dev/kvm",
+    "--security-opt=seccomp=unconfined",
     "--cap-add=NET_ADMIN",
-    "--cap-add=NET_RAW"
+    "--cap-add=NET_RAW",
+    "--cap-add=NET_BIND_SERVICE",
+    "--cap-add=SYS_ADMIN",
+    "--cap-add=SYS_PTRACE",
+    "--cap-add=MKNOD"
   ],
-  "forwardPorts": [53, 80],
+
+  // ── Lifecycle ─────────────────────────────────────────────────────────────
+  "postCreateCommand": "bash .devcontainer/setup.sh 2>&1 | tee /tmp/devcontainer-setup.log",
+
+  // ── Forwarded ports ───────────────────────────────────────────────────────
+  "forwardPorts": [80, 5900, 5901, 3389],
   "portsAttributes": {
-    "53": { "label": "Pi-hole DNS",    "onAutoForward": "silent" },
-    "80": { "label": "Pi-hole Web UI", "onAutoForward": "notify" }
+    "80":   { "label": "Pi-hole Admin",  "onAutoForward": "notify" },
+    "5900": { "label": "SPICE",          "onAutoForward": "silent" },
+    "5901": { "label": "VNC",            "onAutoForward": "silent" },
+    "3389": { "label": "RDP",            "onAutoForward": "silent" }
   },
-  "postCreateCommand": "sudo chmod 666 /dev/kvm && sudo apt update && sudo apt install -y docker-compose-plugin qemu-system-x86 qemu-kvm qemu-utils swtpm ovmf && bash .devcontainer/setup-pihole.sh"
+
+  "remoteUser": "root"
 }
