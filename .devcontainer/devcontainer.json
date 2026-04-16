@@ -21,7 +21,7 @@
   ],
 
   // ── Lifecycle ─────────────────────────────────────────────────────────────
-  "postCreateCommand": "bash .devcontainer/setup.sh 2>&1 | tee /tmp/devcontainer-setup.log",
+  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y software-properties-common && sudo add-apt-repository -y universe && sudo apt-get update && sudo apt-get install -y qemu-system-x86 qemu-utils ovmf swtpm qemu-kvm wget git && bash .devcontainer/setup.sh 2>&1 | tee /tmp/devcontainer-setup.log",
 
   // ── Forwarded ports ───────────────────────────────────────────────────────
   "forwardPorts": [80, 5900, 5901, 3389],
