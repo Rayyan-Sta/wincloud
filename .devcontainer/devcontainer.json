@@ -1,6 +1,6 @@
 {
   "name": "WinCloud — QEMU + Pi-hole",
-  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.03",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
 
   // ── Container runtime args ────────────────────────────────────────────────
   // --device=/dev/net/tun  → Tailscale & QEMU TAP/TUN networking
